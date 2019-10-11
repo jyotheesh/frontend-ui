@@ -9,11 +9,11 @@ export class CommonService {
   constructor(private http: HttpClient) { }
 
   getLoginUrl(value: any) {
-    return this.http.post('http://35.154.138.133:4433/mortgageapp/auth/login', value);
+    return this.http.post('http://localhost:4433/mortgageapp/auth/login', value);
   }
 
   getPaymentSchedule() {
-    let url = 'http://35.154.138.133:4433/mortgageapp/api/loan?userId=455';
+    let url = 'http://localhost:4433/mortgageapp/api/loan?userId=455';
     let token = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXJlc2giLCJleHAiOjE1NzE2MzkwMjR9.RlgX-sMSoTx8w2wML1dU2Jm9ybyXM1hL2z4k_Cc29MmQGlIAJsoNLCqJDo8kE8mu6ScgmYpEynvyY4S_wKIjOA";
 
     const headers = new HttpHeaders().append('token', token);
