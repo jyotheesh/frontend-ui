@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css';
+
+/*header */
+.navbar-inverse{
+  background-color: #fff;
+  border-color: #fff;
+  box-shadow: 2px 1px 8px #888;
+  margin-bottom: 0px;
+  height: 80px;
+}
+.panel-primary>.panel-heading{
+  font-weight: bold;
+  background-color: #ff6200;
+  border-color: #ff6200;
+}
+.navbar-inverse img {
+    position: relative;   
+    width: 65%;
+    left: 22px;
+}
+.panel{
+  border:1px solid #ff6200;  
+}
+.margin-10{
+margin: auto;
+margin-top: 10%;
+float: none;
+}
+.margin-5{
+  margin: auto;
+  margin-top: 5%;
+  float: none;
+  }
+.margin-auto{
+  float: none;
+  margin: auto;
+}
+/*material style start*/
+.mat-form-field{
+  display: block !important;
+}
+.mt-5{
+text-align: right;
+}
+.title{
+  font-size: 28px;
+  color: #ff6200;
+  text-align: center;
+  position: relative;
+  left: 24%;
+  top: 17px;
+}
+/*material style end*/
+
+.ui-panel .ui-panel-titlebar{
+  background-color: #ff6200 !important;
+  border:1px solid #ff6200 !important;  
+  color: #fff !important;  
+}
+.ui-panel .ui-panel-content{
+  border:1px solid #ff6200 !important;
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+  color: #ff6200;
+}
+
+ul.nav.navbar-nav.navbar-right {
+  position: relative;
+  top: -20px;
+}
+table.table-payment {
+  width: 70%;
+  margin: auto;
+}
+table.table-payment td {
+  padding: 10px;
+  border: 1px solid #ff6200;
+}
+
+
+@media only screen and (max-width: 670px) {   
+    #myLinks{
+        display: none;
+    }
+    .icon{
+        display: block;
+        background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #888;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    } 
+    .navbar-inverse .navbar-toggle{
+      background-color: #ff6200;
+      position: relative;
+    top: 13px;
+    }
+    .navbar-inverse{
+        margin-bottom: 0px;
+    }  
+    .navbar-inverse img {
+      width: 40%;
+      left: 10px;
+      top: 8px;
+    }  
+    .title{
+      left: 35%;
+      top: -28px;
+      font-size: 21px;
+    }
+    .panel-group{
+      margin-top: 5%;
+    }
+    ul.nav.navbar-nav.navbar-right {
+      background: #fff;
+      margin-bottom: 10px;
+      box-shadow: 1px 2px 2px #888;
+      z-index: 9999;
+  }
+}
+

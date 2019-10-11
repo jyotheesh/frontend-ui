@@ -1,0 +1,95 @@
+<div class="margin-5">
+    <div class="col-md-3">
+        <app-side-nav></app-side-nav>
+    </div>
+    <div class="col-md-7">
+        <div class="panel-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Eligibity Check and Apply</div>
+                <div class="panel-body">
+                    <form class="example-form" [formGroup]="eligibityForm">
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Customer Name" formControlName="customerName"
+                                id="customerName">
+                            <mat-error *ngIf="hasError('customerName', 'required')">Customer Name is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="text" placeholder="Property Details" formControlName="propertyDetails"
+                                id="propertyDetails">
+                            <mat-error *ngIf="hasError('propertyDetails', 'required')">Property Details is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Property Value" formControlName="propertyValue"
+                                id="propertyValue" [(ngModel)]="propertyValue">
+                            <mat-error *ngIf="hasError('propertyValue', 'required')">Property Value is required
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Age" formControlName="age" id="age"
+                                [(ngModel)]="age" min="18" (change)="onChanges($event)">
+                            <mat-error *ngIf=" hasError('age', 'required' )">Age is required</mat-error>
+                            <mat-error *ngIf="hasError('age', 'min')">Age should be min 18</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Gross Income" formControlName="grossIncome"
+                                id="grossIncome" [(ngModel)]="grossIncome" min="0">
+                            <mat-error *ngIf="hasError('grossIncome', 'required')">Gross Income is required </mat-error>
+                            <mat-error *ngIf="hasError('grossIncome', 'min')">Gross Income should be min 0
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Other EMI" formControlName="otherEMI"
+                                id="otherEMI" [(ngModel)]="otherEMI" min="0">
+                            <mat-error *ngIf="hasError('otherEMI', 'required')">Other EMI is required</mat-error>
+                            <mat-error *ngIf="hasError('otherEMI', 'min')">Gross Income should be min 0
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Eligible Amount" readonly
+                                formControlName="eligibleAmount" id="eligibleAmount" min="0"
+                                ngModel="{{(propertyValue*1.5)+((grossIncome-otherEMI)*ages)}}">
+                            <mat-error *ngIf="hasError('eligibleAmount', 'required')">Eligible Amount is required
+                            </mat-error>
+                            <mat-error *ngIf="hasError('eligibleAmount', 'min')">Eligible Amount should be min 0
+                            </mat-error>
+
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Loan Amount" formControlName="loanAmount"
+                                id="loanAmount" min="0">
+                            <mat-error *ngIf="hasError('loanAmount', 'required')">Loan Amount is required
+                            </mat-error>
+                            <mat-error *ngIf="hasError('loanAmount', 'min')">Loan Amountt should be min 0
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Tenure (months)" formControlName="tenure"
+                                id="tenure" min="0">
+                            <mat-error *ngIf="hasError('tenure', 'required')">Tenure (months) is required
+                            </mat-error>
+                            <mat-error *ngIf="hasError('tenure', 'min')">Tenure (months) should be min 0
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput type="number" placeholder="Interest Rate" formControlName="interest"
+                                id="interest" min="0">
+                            <mat-error *ngIf="hasError('interest', 'required')">Interest Rate is required
+                            </mat-error>
+                            <mat-error *ngIf="hasError('tenure', 'min')">TInterest Rate should be min 0
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="mt-5">
+                            <button mat-raised-button color="primary" (click)="apply(eligibityForm.value)"
+                                label="Top Center" [disabled]="eligibityForm.invalid">Apply</button> &nbsp;&nbsp;
+                            <!-- <button mat-raised-button color="primary" (click)="reset()">Cancel</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<p-toast [style]="{marginTop: '80px'}"></p-toast>

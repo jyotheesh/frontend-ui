@@ -1,0 +1,31 @@
+/*side menu */
+ul.side-menu li {
+    padding: 10px;
+    margin: 0px;
+    list-style: none;
+    border-bottom: 1px solid #fff; 
+    background: #ff6200;
+    text-align: center;
+  }
+  ul.side-menu{
+    padding: 0px;
+    margin: 0px; 
+    border: 1px solid #ff6200; 
+    border-radius: 5px;
+  }
+  ul.side-menu li a{ 
+    text-decoration: none;
+    color: #fff; 
+  }
+  ul.side-menu li.active{
+    background: #fff;
+    border: 1px solid #ff6200; 
+  }
+  ul.side-menu li:hover{
+    background: #fff;
+    border: 1px solid #ff6200; 
+    cursor: pointer;
+  }
+  ul.side-menu li:hover a,ul.side-menu li.active a{
+    color: #ff6200;
+  }
